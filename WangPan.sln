@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WangPan", "WangPan\WangPan.csproj", "{D08923E3-840C-4C9E-BF54-25EFCAC37A68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTool", "CommonTool\CommonTool.csproj", "{882618C5-C2F1-4BEE-9EB3-A04B2A8D434D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D08923E3-840C-4C9E-BF54-25EFCAC37A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D08923E3-840C-4C9E-BF54-25EFCAC37A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D08923E3-840C-4C9E-BF54-25EFCAC37A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882618C5-C2F1-4BEE-9EB3-A04B2A8D434D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882618C5-C2F1-4BEE-9EB3-A04B2A8D434D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882618C5-C2F1-4BEE-9EB3-A04B2A8D434D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882618C5-C2F1-4BEE-9EB3-A04B2A8D434D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
