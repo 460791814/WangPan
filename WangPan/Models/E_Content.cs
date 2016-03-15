@@ -28,5 +28,10 @@ namespace WangPan.Models
             get;
             set;
         }
+        public string Cite
+        {
+            get;
+            set;
+        }
     }
 }

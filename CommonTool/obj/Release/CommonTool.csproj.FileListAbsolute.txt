@@ -1,0 +1,4 @@
+D:\Code\Web\WangPan\CommonTool\bin\Release\CommonTool.dll
+D:\Code\Web\WangPan\CommonTool\bin\Release\CommonTool.pdb
+D:\Code\Web\WangPan\CommonTool\obj\Release\CommonTool.dll
+D:\Code\Web\WangPan\CommonTool\obj\Release\CommonTool.pdb
