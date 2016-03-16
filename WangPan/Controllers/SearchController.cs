@@ -22,21 +22,37 @@ namespace WangPan.Controllers
         }
         public ActionResult Search()
         {
-            int pageIndex = Utils.GetInt(Request["page"]);
-            if (pageIndex == 0) pageIndex = 1;
-            string wd = Request["wd"] ;
-            ISearchEngine engine = new CnBingEngine(wd);
-           
+            ISearchEngine engine = null;
+       
+            string q = Request["q"];
+            if (string.IsNullOrEmpty(q)) { return View(); }
+            q = q.Trim().Replace("  ", " ");
+            string[] qs = q.Split(' ');
+            string hbtwd = "";
+            switch (qs[0])
+            {
+                case "site:pan.baidu.com":
+                    engine = new CnBingEngine();
+                    hbtwd =qs[1];
+                    break;
+                default:
+                    break;
+            }
+            ViewBag.ResultStatus = engine.GetResultStatus();
+
             ViewData["contentlist"] = engine.GetContent();
 
             string pageHtml = engine.GetPage();
 
-            ViewBag.wd = wd;
+            ViewBag.hbtwd = hbtwd;
             ViewBag.pageHtml = pageHtml;
-         
+
 
             return View();
         }
+
+
+
 
     }
 }

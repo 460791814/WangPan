@@ -112,5 +112,30 @@ namespace WangPan.SearchEngine
 
             return pageStr.ToString();
         }
+
+        /// <summary>
+        /// 获取国内网盘集合
+        /// </summary>
+        /// <returns></returns>
+        public string[] GuoNeiWangPanArr = new string[] { 
+        
+			"国内网盘|pan.baidu.com",
+			"百度网盘|pan.baidu.com",
+			"华为网盘|dl.vmall.com",
+			"迅雷快传|kuai.xunlei.com",
+			"QQ旋风|fenxiang.qq.com",
+			"金山快盘|cloud.letv.com",
+			"千脑网盘|qiannao.com",
+			"360云盘|yunpan.cn",
+		    "腾讯微云|share.weiyun.com",
+			"一木禾网盘|yimuhe.com",
+	     	"城通网盘|ctfile.com",
+			"千军万马|7958.com",
+			"YunFile网盘|yunfile.com",
+	    	"vdisk威盘|vdisk.cn",
+			"115网盘|",
+			"盛大网盘|www.colayun.com",
+			"RayFile|www.rayfile.com",
+        };
     }
 }

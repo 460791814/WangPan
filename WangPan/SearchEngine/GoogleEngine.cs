@@ -88,6 +88,11 @@ namespace WangPan.SearchEngine
             }
             return lastPageIndex;
         }
-        
+
+
+        public string GetResultStatus()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

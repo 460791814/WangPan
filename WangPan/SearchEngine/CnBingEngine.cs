@@ -14,30 +14,26 @@ namespace WangPan.SearchEngine
     {
         private int pageIndex;
         private string keyWord;
-        public string htmlContent = "";
-      public   CnBingEngine(string keyword)
+        private string htmlContent = "";
+
+        public CnBingEngine()
         {
-          
+
             try
             {
                 var queryStr = new StringBuilder();
-             
+
                 foreach (
                    var name in
                     HttpContext.Current.Request.QueryString.Cast<string>()
                            .Where(name => (name + "").ToLower() != "page"))
-                    queryStr.Append("&amp;" + name + "=" +
-                                  HttpContext.Current.Server.UrlEncode(HttpContext.Current.Request.QueryString[name]));
+                    queryStr.Append("&" + name + "=" +
+                                  HttpContext.Current.Request.QueryString[name]);
 
                 string url = "http://cn.bing.com/search?";
-                if (!string.IsNullOrEmpty(keyword))
-                {
 
-                    url = "http://cn.bing.com/search?q=site%3Apan.baidu.com+" +  HttpContext.Current.Server.UrlEncode(keyword);
-                }
-                else {
-                     url = url + queryStr.ToString().Replace("&amp;","&");
-                }
+                url = url + queryStr.ToString().Replace("&amp;", "&");
+
                 htmlContent = HttpHelper.SendGet(url);
                 htmlContent = htmlContent.Replace("\n", "").Replace("&nbsp;", ""); ;
             }
@@ -46,13 +42,22 @@ namespace WangPan.SearchEngine
 
             }
         }
-        public List<Models.E_Content> GetContent()
+        /// <summary>
+        /// 获取结果信息
+        /// </summary>
+        /// <returns></returns>
+        public string GetResultStatus()
         {
-
 
             //获取结果
             string resultStatsReg = "<span class=\"sb_count\">(.*?)</span>";
             string resultStats = EngineTool.GetHtmlByReg(htmlContent, resultStatsReg);
+            return resultStats;
+        }
+        public List<Models.E_Content> GetContent()
+        {
+
+
 
             //获取内容
             string contentReg = "<ol id=\"b_results\">(.*?)</ol>";
@@ -87,7 +92,12 @@ namespace WangPan.SearchEngine
             string pageContent = EngineTool.GetHtmlByReg(htmlContent, pageContentReg, 1);
 
 
-            return pageContent.Replace("search?", "Search/search?").Replace("class=\"sw_prev\"", "class=\"n\"").Replace("class=\"sw_next\"", "class=\"n\"").Replace("class=\"sb_pagS\"", "class=\"this\"");
+            return pageContent.Replace("search?", "Search/search?")
+                .Replace("class=\"sw_prev\"", "class=\"n\"")
+                .Replace("class=\"sw_next\"", "class=\"n\"")
+                .Replace("class=\"sb_pagS\"", "class=\"this\"")
+                .Replace("class=\"sb_pagP\"", "class=\"n\"")
+                .Replace("class=\"sb_pagN\"", "class=\"n\"");
         }
     }
 }

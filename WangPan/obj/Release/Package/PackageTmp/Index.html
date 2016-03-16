@@ -1,8 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -10,7 +6,7 @@
     <meta content="always" name="referrer">
     <meta name="theme-color" content="#2932e1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <title>网盘搜索,百度云搜索,bt天堂,bt,hash</title>
+    <title>百度一下，你就知道</title>
     <style index="index" id="css_index">
         html, body
         {
@@ -125,8 +121,30 @@
                 height: 60px;
             }
 
- 
-    
+            #qrcode .qrcode-item-1 .qrcode-img
+            {
+                background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_62c636fe.png) 0 0 no-repeat;
+            }
+
+            #qrcode .qrcode-item-2 .qrcode-img
+            {
+                background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/nuomi_510f7472.png) 0 0 no-repeat;
+            }
+
+        @media only screen and (-webkit-min-device-pixel-ratio:2)
+        {
+            #qrcode .qrcode-item-1 .qrcode-img
+            {
+                background-image: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_x2_298f96c5.png);
+                background-size: 60px 60px;
+            }
+
+            #qrcode .qrcode-item-2 .qrcode-img
+            {
+                background-image: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/nuomi_x2_de75d5db.png);
+                background-size: 60px 60px;
+            }
+        }
 
         #qrcode .qrcode-text
         {
@@ -229,7 +247,7 @@
         {
             width: 95px;
             height: 32px;
-            padding-top: 2px;
+            padding-top: 2px\9;
             font-size: 14px;
             background-color: #ddd;
             background-position: 0 -48px;
@@ -1582,9 +1600,10 @@
                         <a href="/" id="result_logo" onmousedown="return c({'fm':'tab','tab':'logo'})">
                             <img src="//www.baidu.com/img/baidu_jgylogo3.gif" alt="到百度首页" title="到百度首页"></a>
                         <script>
-                            function check() {
-
-                                var wd = document.getElementById("hbtwd").value;
+                            function check()
+                            {
+                            
+                                var wd = document.getElementById("kw").value;
                                 var q = document.getElementById("q").value;
                                 document.getElementById("q").value = q + " " + wd;
                             }
@@ -1592,12 +1611,12 @@
                         </script>
                         <form id="form" name="f" action="/search/search" class="fm"  onsubmit="return check()">
                
-                               
+                                <input type="hidden" name="engine" value="cnbing">
                              <input type="hidden" id="q" name="q" value="site:pan.baidu.com">
                                 <span class="bg s_ipt_wr quickdelete-wrap">
                                     <span class="ipt_photo">
 
-                                    </span><input id="hbtwd" name="hbtwd" class="s_ipt" value="" maxlength="255" autocomplete="off">
+                                    </span><input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off">
                                     <a href="javascript:;" id="quickdelete" title="清空" class="quickdelete" style="top: 0px; right: 0px; display: none;"></a>
 
                                 </span><span class="bg s_btn_wr"><input type="submit" id="su" value="搜一下" class="bg s_btn" ></span>

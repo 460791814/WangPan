@@ -18,3 +18,7 @@ D:\Code\Web\WangPan\CommonTool\bin\Debug\CommonTool.pdb
 D:\Code\Web\WangPan\CommonTool\obj\Debug\CommonTool.csprojResolveAssemblyReference.cache
 D:\Code\Web\WangPan\CommonTool\obj\Debug\CommonTool.dll
 D:\Code\Web\WangPan\CommonTool\obj\Debug\CommonTool.pdb
+F:\Code\Web\WangPan\CommonTool\bin\Debug\CommonTool.dll
+F:\Code\Web\WangPan\CommonTool\bin\Debug\CommonTool.pdb
+F:\Code\Web\WangPan\CommonTool\obj\Debug\CommonTool.dll
+F:\Code\Web\WangPan\CommonTool\obj\Debug\CommonTool.pdb
