@@ -29,19 +29,37 @@ namespace WangPan.Controllers
             q = q.Trim().Replace("  ", " ");
             string[] qs = q.Split(' ');
             string hbtwd = "";
-            switch (qs[0])
+            engine = new CnBingEngine();
+            hbtwd = qs[1];
+            //switch (qs[0])
+            //{
+            //    case "site:pan.baidu.com":
+            //        engine = new CnBingEngine();
+            //        hbtwd =qs[1];
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+            StringBuilder wangPanNav = new StringBuilder();
+            
+            for (int i = 0; i < EngineTool.GuoNeiWangPanArr.Length; i++)
             {
-                case "site:pan.baidu.com":
-                    engine = new CnBingEngine();
-                    hbtwd =qs[1];
-                    break;
-                default:
-                    break;
+                string[] temp=EngineTool.GuoNeiWangPanArr[i].Split('|');
+                if (qs[0].Contains(temp[1]))
+                {
+                    wangPanNav.Append("<a class=\"current\" style=\" margin-left:10px;font-size:12px\" href=\"/Search/Search?q=site:"+temp[1]+" "+hbtwd
+                        +"\">"+temp[0]+"</a>");
+                }
+                else {
+                    wangPanNav.Append("<a style=\" margin-left:10px;font-size:12px\" href=\"/Search/Search?q=site:" + temp[1] + " " + hbtwd
+                          + "\">" + temp[0] + "</a>");
+                }
             }
             ViewBag.ResultStatus = engine.GetResultStatus();
 
             ViewData["contentlist"] = engine.GetContent();
-
+            ViewBag.GuoNeiWangPan = wangPanNav;
             string pageHtml = engine.GetPage();
 
             ViewBag.hbtwd = hbtwd;

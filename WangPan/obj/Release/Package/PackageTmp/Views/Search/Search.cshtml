@@ -3,14 +3,13 @@
 }
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@ViewBag.hbtwd - 网盘搜索 - hashbt.com</title>
-    <meta name="keywords" content="1,1网盘,1下载,1百度云,1百度网盘" />
-    <meta name="description" content="1的百度云网盘,115网盘,微盘等网盘资源搜索下载。1相关信息，首页-会员中心-百度云百度云是百度公司推出的一款云服务产品。通过百度云，您可以将照片、文档、音乐、
-通讯录数据在各类设备中使用，在众多朋友圈里分享与交流。" />
+    <title>@ViewBag.hbtwd - 网盘搜索,百度云搜索 - hashbt.com</title>
+    <meta name="keywords" content="@ViewBag.hbtwd,@ViewBag.hbtwd网盘,@ViewBag.hbtwd下载,@ViewBag.hbtwd百度云,@ViewBag.hbtwd百度网盘,bt,bt下载,bt天堂" />
+    <meta name="description" content="hashbt是一个聚合BT资源的网站，在这里您可以很方便的查找您要的资源" />
 
     <link href="/Content/style.css" rel="stylesheet" />
     <script>
@@ -31,8 +30,9 @@
             </a>
             <div class="searchbox">
                 <form action="/Search/Search" method="get" onsubmit="return check();">
-                    <input type="hidden" id="q" name="q" value="site:pan.baidu.com">
-                    <input align="middle" name="hbtwd" class="q" id="hbtwd" value="@ViewBag.hbtwd " autocomplete="off" baidusug="1" x-webkit-speech /><input id="btn" class="btn" align="middle" value="搜一下" type="submit" />
+                    <input type="hidden" id="q" name="q" value="site:pan.baidu.com" />
+                    <input align="middle" name="hbtwd" class="q" id="hbtwd" value="@ViewBag.hbtwd " autocomplete="off" baidusug="1" x-webkit-speech=x-webkit-speech />
+                    <input id="btn" class="btn" align="middle" value="搜一下" type="submit" />
                 </form>
             </div>
 
@@ -41,43 +41,46 @@
 
     <div id="topnav">
         <span class="nav">
-            <a class='current' onclick='return false;'>全部网盘</a>
-            <a href=''>百度网盘</a>
- 
+@Html.Raw(ViewBag.GuoNeiWangPan)
+         
+
         </span>
+ 
     </div>
 
     <div id="p_main">
         <div id="res" class="res">
             <div id="resinfo">
-              @Html.Raw(ViewBag.ResultStatus)
+                @Html.Raw(ViewBag.ResultStatus)
             </div>
             <div id="result">
                 @{
- var temp=ViewData["contentlist"] as List<WangPan.Models.E_Content>;
-if(temp!=null&&temp.Count>0){
-       for (int i = 0; i < temp.Count; i++)
-             {
-                <div class="g">
-                    <h2><a href=" @Html.Raw(temp[i].DataHref)" target="_blank" class="s">@Html.Raw(temp[i].title)</a></h2>
-                    <div class="std">
-                      @Html.Raw(temp[i].Intro)
-                    </div>
-                    <span class="a"> @Html.Raw(temp[i].DataHref)</span>
-                </div>
-                }
+                    var temp = ViewData["contentlist"] as List<WangPan.Models.E_Content>;
+                    if (temp != null && temp.Count > 0)
+                    {
+                        for (int i = 0; i < temp.Count; i++)
+                        {
+                            <div class="g">
+                                <h2><a href="@Html.Raw(temp[i].DataHref)" target="_blank" class="s">@Html.Raw(temp[i].title)</a></h2>
+                                <div class="std">
+                                    @Html.Raw(temp[i].Intro)
+                                </div>
+                                <span class="a"> @Html.Raw(temp[i].Cite)</span>
+                            </div>
+                        }
 
-}else{
-   <div style="padding:50px 10px;line-height:35px;color:#444444; font-size:16px;">没有找到相关网盘资源，请更换关键词搜索，或刷新本页重试。<br>您也可以试试 <a href="" target="_blank">磁力搜索</a> 或 <a href="" target="_blank">网页搜索</a> 。</div>
-}
-   }      
+                    }
+                    else
+                    {
+                        <div style="padding:50px 10px;line-height:35px;color:#444444; font-size:18px;">没有找到相关网盘资源，请更换关键词搜索，或刷新本页重试。</div>
+                    }
+                }
             </div>
 
             <div class="cl"></div>
             <div id="sopage">
-                @*<a class="this" href="http://www.pansoso.com/zh/1">1</a><a href="http://www.pansoso.com/zh/1_2">2</a><a href="http://www.pansoso.com/zh/1_3">3</a><a href="http://www.pansoso.com/zh/1_4">4</a><a href="http://www.pansoso.com/zh/1_5">5</a><a href="http://www.pansoso.com/zh/1_6">6</a><a href="http://www.pansoso.com/zh/1_7">7</a><a href="http://www.pansoso.com/zh/1_8">8</a><a href="http://www.pansoso.com/zh/1_9">9</a><a href="http://www.pansoso.com/zh/1_10">10</a><a class="n" href="http://www.pansoso.com/zh/1_2">下一页</a>*@
 
- @Html.Raw(ViewBag.pageHtml)
+                @Html.Raw(ViewBag.pageHtml)
             </div>
 
             <div class="cl10"></div>

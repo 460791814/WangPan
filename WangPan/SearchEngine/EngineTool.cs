@@ -117,9 +117,9 @@ namespace WangPan.SearchEngine
         /// 获取国内网盘集合
         /// </summary>
         /// <returns></returns>
-        public string[] GuoNeiWangPanArr = new string[] { 
+        public static string[] GuoNeiWangPanArr = new string[] { 
         
-			"国内网盘|pan.baidu.com",
+			//"国内网盘|pan.baidu.com",
 			"百度网盘|pan.baidu.com",
 			"华为网盘|dl.vmall.com",
 			"迅雷快传|kuai.xunlei.com",
@@ -133,9 +133,23 @@ namespace WangPan.SearchEngine
 			"千军万马|7958.com",
 			"YunFile网盘|yunfile.com",
 	    	"vdisk威盘|vdisk.cn",
-			"115网盘|",
+			"115网盘|115.com",
 			"盛大网盘|www.colayun.com",
 			"RayFile|www.rayfile.com",
+        };
+        public string[] GuoWaiWangPanArr = new string[] { 
+           
+			"国外网盘|www.dropbox.com",
+			"hotfile.com|hotfile.com",
+			"rapidshare.com|rapidshare.com",
+			"oron.com|oron.com",
+			"uploaded.to|uploaded.to",
+			"easy-share.com|easy-share.com",
+			"uploading.com|uploading.com",
+			"turbobit.net|turbobit.net",
+			"fileserve.com|fileserve.com",
+			"enterupload.com|enterupload.com",
+		 
         };
     }
 }

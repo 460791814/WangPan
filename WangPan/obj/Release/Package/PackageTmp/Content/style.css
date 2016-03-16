@@ -156,4 +156,4 @@ input,button,select,textarea{outline:none}
 .explain li{height:15px; width:15px; margin:0 6px -2px 0px;_margin:10px 5px 0 5px; overflow:hidden; display:inline-block; background:url() no-repeat;}
 .explain a{color:#00a9f6;text-decoration:underline;}
 
-#footer{ background-color:#f7f7f7;FONT-SIZE: 12px;OVERFLOW: hidden; WIDTH: 100%; COLOR: #acacac;FONT-FAMILY: verdana; TEXT-ALIGN: center; font-weight:100; padding:12px 0 10px 0;border-top: #e8e8e8 solid 1px;}
+#footer{ background-color:#f7f7f7;FONT-SIZE: 12px;OVERFLOW: hidden; WIDTH: 100%; COLOR: #acacac;FONT-FAMILY: verdana; TEXT-ALIGN: center; font-weight:100; padding:12px 0 10px 0;border-top: #e8e8e8 solid 1px;position: fixed;bottom: 0;width: 100%;}
