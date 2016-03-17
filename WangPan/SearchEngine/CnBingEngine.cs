@@ -78,7 +78,7 @@ namespace WangPan.SearchEngine
                     eContent.Intro = EngineTool.GetHtmlByReg(oneContent, contentIntroReg, 1);
                     string citeReg = "<cite>(.*?)</cite>";
                     string cite = EngineTool.GetHtmlByReg(oneContent, citeReg, 1);
-                    eContent.Cite = cite;
+                    eContent.Cite = cite.Replace("<strong>", "").Replace("</strong>", ""); ;
                     contentList.Add(eContent);
                 }
             }

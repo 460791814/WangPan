@@ -51,7 +51,7 @@ input,button,select,textarea{outline:none}
 #headers .close{ width:22px; height:22px; border:1px solid #ECEAEA; background-color:#FFF; text-align:center; line-height:22px; position:absolute; top:10px; right:10px; font-size:14px; cursor:pointer; color:#F73216;}
 .desktop{ display:inline-block; float:left; margin:20px 0 0 15px; color:red}
 
-.logo{display:block;float:left;margin:14px 5px 0 7px;_margin:14px 5px 0 5px;height:27px;width:108px;background:no-repeat 50% 50%;background-image:url(../images/slogo.png);background-size:auto 26px;}
+.logo{display:block;float:left;margin:14px 5px 0 7px;_margin:14px 5px 0 5px;height:27px;width:108px;background:no-repeat 50% 50%;background-image:url("http://7xrysj.com1.z0.glb.clouddn.com/bdlogo.png");background-size:auto 26px;}
 
 .searchbox{ width:557px; height:32px; margin:10px 5px 0 3px; float:left; display:inline-block;}
 .searchbox .q{ display:inline-block; background:#FFF; width:441px; height:32px; line-height:30px; font-size:16px; color:#333; margin:0px; padding:0 10px 0 10px; border:none; float:left;border:1px solid #CFC7C8; border-right:0px;}
@@ -156,4 +156,4 @@ input,button,select,textarea{outline:none}
 .explain li{height:15px; width:15px; margin:0 6px -2px 0px;_margin:10px 5px 0 5px; overflow:hidden; display:inline-block; background:url() no-repeat;}
 .explain a{color:#00a9f6;text-decoration:underline;}
 
-#footer{ background-color:#f7f7f7;FONT-SIZE: 12px;OVERFLOW: hidden; WIDTH: 100%; COLOR: #acacac;FONT-FAMILY: verdana; TEXT-ALIGN: center; font-weight:100; padding:12px 0 10px 0;border-top: #e8e8e8 solid 1px;position: fixed;bottom: 0;width: 100%;}
+#footer{ background-color:#f7f7f7;FONT-SIZE: 12px;OVERFLOW: hidden; WIDTH: 100%; COLOR: #acacac;FONT-FAMILY: verdana;  font-weight:100; padding:12px 0 10px 0;border-top: #e8e8e8 solid 1px;position: fixed;bottom: 0;width: 100%;}
