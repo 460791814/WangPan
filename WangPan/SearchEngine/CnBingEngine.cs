@@ -19,8 +19,8 @@ namespace WangPan.SearchEngine
         public CnBingEngine()
         {
 
-            try
-            {
+         //   try
+         //   {
                 var queryStr = new StringBuilder();
 
                 foreach (
@@ -35,12 +35,13 @@ namespace WangPan.SearchEngine
                 url = url + queryStr.ToString().Replace("&amp;", "&");
 
                 htmlContent = HttpHelper.SendGet(url);
+                Utils.SaveLog(htmlContent);
                 htmlContent = htmlContent.Replace("\n", "").Replace("&nbsp;", ""); ;
-            }
-            catch (Exception)
-            {
+          //  }
+          //  catch (Exception)
+          //  {
 
-            }
+          //  }
         }
         /// <summary>
         /// 获取结果信息
